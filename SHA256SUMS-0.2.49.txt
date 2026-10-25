@@ -1,0 +1,6 @@
+10b321b0c9d76081ada28f37a72beb4cba41c13fbb0535f196264891bafc8227  XiaoHaoHao-full-0.2.49-macOS-arm64.zip
+0c0bcd20d050007ffdf860e5c82fbfdbaad0a191b224b92785f45e04e2717c92  XiaoHaoHao-simple-0.2.49-macOS-arm64.zip
+0be8486887f7565543ee56cada8ee36a2d7fe6f697cb7156cc0128cf9701fbf1  XiaoHaoHao-full-0.2.49-macOS-x64.zip
+40eca3516f03b8bd57435dcfb85421502e8c0069d7409167bf31ab34582c889b  XiaoHaoHao-simple-0.2.49-macOS-x64.zip
+97ed2ea6b18d711ed75e2b87b2dabd60a41bceb4cf3a42d260b9e8bac3a935af  XiaoHaoHao-full-0.2.49-Windows-x64-portable.exe
+5cce0ddd3acb45b84e97424e8179e9f47b016ba61daa2e33c492efad07ae33d1  XiaoHaoHao-simple-0.2.49-Windows-x64-portable.exe
