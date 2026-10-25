@@ -21,25 +21,38 @@ XiaoHaoHao is a standalone desktop AI agent. Its workspace brings chat, memory, 
 
 ## Six downloads
 
-| Platform | Edition | Download | File size |
-|---|---|---|---:|
-| macOS ARM64 | Full | [Full](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-full-0.2.49-macOS-arm64.zip) | 307 MB |
-| macOS ARM64 | Simple | [Simple](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-simple-0.2.49-macOS-arm64.zip) | 307 MB |
-| macOS Intel x64 | Full | [Full](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-full-0.2.49-macOS-x64.zip) | 311 MB |
-| macOS Intel x64 | Simple | [Simple](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-simple-0.2.49-macOS-x64.zip) | 311 MB |
+| Platform | Edition | Download |
+|---|---|---|
+| macOS ARM64 | Full | [Four parts on the Release page](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
+| macOS ARM64 | Simple | [Four parts on the Release page](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
+| macOS Intel x64 | Full | [Four parts on the Release page](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
+| macOS Intel x64 | Simple | [Four parts on the Release page](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
 | Windows 11 x64 | Full | [Full](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-full-0.2.49-Windows-x64-portable.exe) | 121 MB |
 | Windows 11 x64 | Simple | [Simple](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-simple-0.2.49-Windows-x64-portable.exe) | 121 MB |
 
 [Download the SHA-256 manifest for all six builds](assets/SHA256SUMS-0.2.49.txt).
 
-macOS downloads are ZIP archives. Windows downloads are portable x64 executables. All six builds report version 0.2.49; Full and Simple keep their app data separate.
+macOS downloads come as four parts that must be reassembled with the commands below. Windows downloads are portable x64 executables. All six builds report version 0.2.49; Full and Simple keep their app data separate.
+
+### Reassemble the macOS downloads
+
+Each macOS build is split into four ordered files on the GitHub Release page (part00 through part03). Download all four parts for the same build, open Terminal in the download folder, and run the matching command:
+
+```sh
+cat XiaoHaoHao-full-0.2.49-macOS-arm64.zip.part00 XiaoHaoHao-full-0.2.49-macOS-arm64.zip.part01 XiaoHaoHao-full-0.2.49-macOS-arm64.zip.part02 XiaoHaoHao-full-0.2.49-macOS-arm64.zip.part03 > XiaoHaoHao-full-0.2.49-macOS-arm64.zip
+cat XiaoHaoHao-simple-0.2.49-macOS-arm64.zip.part00 XiaoHaoHao-simple-0.2.49-macOS-arm64.zip.part01 XiaoHaoHao-simple-0.2.49-macOS-arm64.zip.part02 XiaoHaoHao-simple-0.2.49-macOS-arm64.zip.part03 > XiaoHaoHao-simple-0.2.49-macOS-arm64.zip
+cat XiaoHaoHao-full-0.2.49-macOS-x64.zip.part00 XiaoHaoHao-full-0.2.49-macOS-x64.zip.part01 XiaoHaoHao-full-0.2.49-macOS-x64.zip.part02 XiaoHaoHao-full-0.2.49-macOS-x64.zip.part03 > XiaoHaoHao-full-0.2.49-macOS-x64.zip
+cat XiaoHaoHao-simple-0.2.49-macOS-x64.zip.part00 XiaoHaoHao-simple-0.2.49-macOS-x64.zip.part01 XiaoHaoHao-simple-0.2.49-macOS-x64.zip.part02 XiaoHaoHao-simple-0.2.49-macOS-x64.zip.part03 > XiaoHaoHao-simple-0.2.49-macOS-x64.zip
+```
+
+Then verify with `shasum -a 256 -c SHA256SUMS-0.2.49.txt`. The [SHA-256 manifest](assets/SHA256SUMS-0.2.49.txt) is also available separately.
 
 ## Verification notes
 
 - macOS ARM64: release packages and checksum manifest were checked.
 - macOS Intel x64: both ZIP archives passed integrity checks; executable architecture and version metadata were verified.
 - Windows 11 x64: both portable builds were launched in a Windows 11 environment and their main windows responded. Pre-build runtime checks passed 8/8.
-- SHA-256 was recalculated for all six release files; each individual file is below GitHub Releases' 2 GiB per-file limit.
+- SHA-256 was recalculated for all six builds; each reconstructed macOS ZIP matches its original archive.
 - The macOS apps are not signed or notarized, and the Windows programs are not Authenticode-signed. Gatekeeper or SmartScreen may show a warning on first launch.
 - Configure your own model provider and API key for natural-language conversations. Never put API keys in public screenshots or files.
 
