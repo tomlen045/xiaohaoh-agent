@@ -10,12 +10,14 @@
 
 | 平台 Platform | Edition 版本 | Download 下载 |
 |---|---|---|
-| macOS ARM64 | Full 完整版 | [ZIP](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-full-0.2.49-macOS-arm64.zip) |
-| macOS ARM64 | Simple 简洁版 | [ZIP](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-simple-0.2.49-macOS-arm64.zip) |
-| macOS Intel x64 | Full 完整版 | [ZIP](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-full-0.2.49-macOS-x64.zip) |
-| macOS Intel x64 | Simple 简洁版 | [ZIP](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-simple-0.2.49-macOS-x64.zip) |
+| macOS ARM64 | Full 完整版 | [4 个分卷，见 Release](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
+| macOS ARM64 | Simple 简洁版 | [4 个分卷，见 Release](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
+| macOS Intel x64 | Full 完整版 | [4 个分卷，见 Release](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
+| macOS Intel x64 | Simple 简洁版 | [4 个分卷，见 Release](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
 | Windows 11 x64 | Full 完整版 | [Portable EXE 便携版](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-full-0.2.49-Windows-x64-portable.exe) |
 | Windows 11 x64 | Simple 简洁版 | [Portable EXE 便携版](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-simple-0.2.49-Windows-x64-portable.exe) |
+
+macOS ZIP 因单文件上传限制拆成 4 个有序分卷；下载同一构建的 part00–part03 后，按 [中文版](zh-CN.md#macos-分卷合并) 或 [English guide](en.md#reassemble-the-macos-downloads) 合并并校验.
 
 - [SHA-256 校验清单 / checksum manifest](assets/SHA256SUMS-0.2.49.txt)
 
