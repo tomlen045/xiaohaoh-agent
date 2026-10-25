@@ -21,25 +21,38 @@
 
 ## 六个版本
 
-| 平台 | 版本 | 下载 | 文件大小 |
-|---|---|---|---:|
-| macOS ARM64 | 完整版 | [完整版](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-full-0.2.49-macOS-arm64.zip) | 307 MB |
-| macOS ARM64 | 简洁版 | [简洁版](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-simple-0.2.49-macOS-arm64.zip) | 307 MB |
-| macOS Intel x64 | 完整版 | [完整版](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-full-0.2.49-macOS-x64.zip) | 311 MB |
-| macOS Intel x64 | 简洁版 | [简洁版](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-simple-0.2.49-macOS-x64.zip) | 311 MB |
+| 平台 | 版本 | 下载 |
+|---|---|---|
+| macOS ARM64 | 完整版 | [四个分卷，见 Release](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
+| macOS ARM64 | 简洁版 | [四个分卷，见 Release](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
+| macOS Intel x64 | 完整版 | [四个分卷，见 Release](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
+| macOS Intel x64 | 简洁版 | [四个分卷，见 Release](https://github.com/tomlen045/xiaohaoh-agent/releases/tag/v0.2.49) |
 | Windows 11 x64 | 完整版 | [完整版](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-full-0.2.49-Windows-x64-portable.exe) | 121 MB |
 | Windows 11 x64 | 简洁版 | [简洁版](https://github.com/tomlen045/xiaohaoh-agent/releases/download/v0.2.49/XiaoHaoHao-simple-0.2.49-Windows-x64-portable.exe) | 121 MB |
 
 [下载全部构建的 SHA-256 校验清单](assets/SHA256SUMS-0.2.49.txt)。
 
-macOS 下载为 ZIP；Windows 下载为 x64 便携 EXE。每个构建版本为 0.2.49。完整版和简洁版各自保存应用数据。
+macOS ZIP 下载为四个分卷，按下方命令合并；Windows 下载为 x64 便携 EXE。每个构建版本为 0.2.49，完整版和简洁版各自保存应用数据。
+
+### macOS 分卷合并
+
+GitHub 发布页中每个 macOS 构建都拆为四个有序文件（part00、part01、part02、part03）。请下载同一构建的全部四个分卷，在终端进入下载目录后执行对应命令：
+
+```sh
+cat XiaoHaoHao-full-0.2.49-macOS-arm64.zip.part00 XiaoHaoHao-full-0.2.49-macOS-arm64.zip.part01 XiaoHaoHao-full-0.2.49-macOS-arm64.zip.part02 XiaoHaoHao-full-0.2.49-macOS-arm64.zip.part03 > XiaoHaoHao-full-0.2.49-macOS-arm64.zip
+cat XiaoHaoHao-simple-0.2.49-macOS-arm64.zip.part00 XiaoHaoHao-simple-0.2.49-macOS-arm64.zip.part01 XiaoHaoHao-simple-0.2.49-macOS-arm64.zip.part02 XiaoHaoHao-simple-0.2.49-macOS-arm64.zip.part03 > XiaoHaoHao-simple-0.2.49-macOS-arm64.zip
+cat XiaoHaoHao-full-0.2.49-macOS-x64.zip.part00 XiaoHaoHao-full-0.2.49-macOS-x64.zip.part01 XiaoHaoHao-full-0.2.49-macOS-x64.zip.part02 XiaoHaoHao-full-0.2.49-macOS-x64.zip.part03 > XiaoHaoHao-full-0.2.49-macOS-x64.zip
+cat XiaoHaoHao-simple-0.2.49-macOS-x64.zip.part00 XiaoHaoHao-simple-0.2.49-macOS-x64.zip.part01 XiaoHaoHao-simple-0.2.49-macOS-x64.zip.part02 XiaoHaoHao-simple-0.2.49-macOS-x64.zip.part03 > XiaoHaoHao-simple-0.2.49-macOS-x64.zip
+```
+
+恢复后可用 `shasum -a 256 -c SHA256SUMS-0.2.49.txt` 校验。校验清单也可[单独下载](assets/SHA256SUMS-0.2.49.txt)。
 
 ## 验收记录
 
 - macOS ARM64：发行包及校验清单已核对。
 - macOS Intel x64：两个 ZIP 的完整性、主程序架构和版本元数据已核对。
 - Windows 11 x64：两个便携程序在 Windows 11 环境启动，主窗口响应正常；构建前运行时检查为 8 项通过、0 项失败。
-- 六个发行文件均重新计算 SHA-256；每个文件均低于 GitHub Release 单文件 2 GiB 限制。
+- 六个构建均重新计算 SHA-256；macOS 分卷合并后的 ZIP 与本地原始归档校验值一致。
 - macOS 应用未签名或公证，Windows 程序未做 Authenticode 签名。首次打开时，Gatekeeper 或 SmartScreen 可能显示安全提示。
 - Windows 版本需配置模型服务/API Key 后进行自然语言对话。请勿把密钥放入公开截图或文件。
 
